@@ -7,14 +7,14 @@ RUN apt-get update  \
         libgl1 \
         libglib2.0-0
 RUN conda init bash
-RUN conda create -n capit python=3.8 -y
-RUN echo "conda activate capit" >> ~/.bashrc
+RUN conda create -n gate python=3.8 -y
+RUN echo "conda activate gate" >> ~/.bashrc
 
-RUN git clone https://github.com/AntreasAntoniou/CAPMultiModal.git
+RUN git clone https://github.com/AntreasAntoniou/GATE.git
 
-SHELL ["conda", "run", "-n", "capit", "/bin/bash", "-c"]
+SHELL ["conda", "run", "-n", "gate", "/bin/bash", "-c"]
 
-RUN cd CAPMultiModal \
+RUN cd GATE \
     && conda install -c conda-forge mamba -y \
     && bash install_dependencies.sh
 
