@@ -15,9 +15,10 @@ RUN cd GATE \
     && conda install -c conda-forge mamba -y \
     && mamba install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge \
     && bash install_dependencies.sh \
-    && apt install fish -y \
+
+RUN apt install fish -y \
     && curl -sS https://starship.rs/install.sh | sh \
-    && starship init fish | source \
+    && starship init fish | source
 
 RUN apt install libgl1-mesa-glx -y
 RUN apt-get install 'ffmpeg'\
