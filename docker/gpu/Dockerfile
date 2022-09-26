@@ -17,8 +17,7 @@ RUN cd GATE \
     && bash install_dependencies.sh
 
 RUN apt install fish -y \
-    && mamba install starship -y \
-    && starship init fish | source
+    && mamba install starship -y
 
 RUN apt install libgl1-mesa-glx -y
 RUN apt-get install 'ffmpeg'\
