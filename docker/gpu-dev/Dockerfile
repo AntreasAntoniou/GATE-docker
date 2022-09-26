@@ -14,6 +14,9 @@ SHELL ["conda", "run", "-n", "gate", "/bin/bash", "-c"]
 RUN cd GATE \
     && conda install -c conda-forge mamba -y \
     && mamba install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge \
-    && bash install_dependencies.sh
+    && bash install_dependencies.sh \
+    && apt install fish -y \
+    && curl -sS https://starship.rs/install.sh | sh \
+    && starship init fish | source \
 
 CMD ["bin/bash"]
