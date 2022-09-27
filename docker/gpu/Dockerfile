@@ -22,6 +22,11 @@ RUN apt install fish -y \
 RUN apt install libgl1-mesa-glx -y
 RUN apt-get install 'ffmpeg'\
     'libsm6'\
-    'libxext6'  -y
+    'libxext6'  -y \
+
+RUN cd GATE \
+    && git pull
+
+CWD /GATE
 
 CMD ["bin/bash"]
